@@ -1,0 +1,1414 @@
+---
+format: 
+  revealjs:
+    #theme: ["theme/q-theme.scss"]
+    slide-number: c/t
+    logo: "https://www.insp.mx/assets/images/insp.png"
+    footer: "[github.com/fdzul](https://github.com/fdzul)"
+    code-copy: true
+    center-title-slide: false
+highlight-style: a11y
+code-link: true
+height: 1080
+width: 1600
+execute: 
+  eval: true
+  echo: true
+---
+
+<h1>Análisis Espacial del Dengue<br>en México</h1>
+
+<h2>
+
+</h2>
+
+<hr>
+
+<br>
+
+
+<h3>Dr. Felipe Dzul Manzanilla</h3>
+
+<br>
+
+
+<h3>Dr. Fabián Correa-Morales</h3>
+
+<br> <br>
+
+<h3>Create: 2024-06-18</h3>
+
+<br>
+
+![](heatmap_tepic.png){.absolute top="250" left="700" width="1000"}
+
+
+
+## [Transmisión Activa del Dengue en Nayarit]{ style="color:#003300;"}
+<hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
+
+<html>
+<head>
+```{=html}
+<style>
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  padding: 5px;
+}
+
+.grid-item {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 5px;
+  font-size: 30px;
+  text-align: center;
+}
+</style>
+```
+</head>
+<body>
+<h1>
+</h1>
+<p>
+</p>
+
+::: grid-container
+
+::: grid-item
+Semana
+:::
+
+::: grid-item
+Tepic
+:::
+
+::: grid-item
+Bahia de Banderas
+:::
+
+::: grid-item
+San Blas
+:::
+
+::: grid-item
+1-25
+:::
+
+::: grid-item
+```{r tepic_1_25}
+#| echo: false
+#| output: true
+# Step 1. load the dengue dataset geocoded ####
+load("/Users/fdzul/Library/CloudStorage/OneDrive-Personal/proyects/geocoding_mex/2024/8.RData/denmex_2024.RData")
+
+########
+densnv::mp_heatmap(locality = c("Tepic", "Xalisco"),
+                        cve_edo = "18",
+                        geocoded_datasets = z,
+                        zoom = 13,
+                        status_caso = c(1, 2),
+                        week = c(1:25),
+                        alpha = 0.2,
+                        static = TRUE,
+                        map_type = "satellite")
+```
+
+:::
+
+::: grid-item
+```{r bahia_1_25}
+#| echo: false
+#| output: true
+# Step 1. load the dengue dataset geocoded ####
+########
+densnv::mp_heatmap(locality = "Bahia de Banderas",
+                        cve_edo = "18",
+                        geocoded_datasets = z,
+                        zoom = 16,
+                        status_caso = c(1, 2),
+                        week = c(1:25),
+                        alpha = 0.2,
+                        static = TRUE,
+                        map_type = "satellite")
+```
+
+:::
+
+::: grid-item
+
+```{r San_blas_1_25}
+#| echo: false
+#| output: true
+
+########
+densnv::mp_heatmap(locality = "San Blas",
+                        cve_edo = "18",
+                        geocoded_datasets = z,
+                        zoom = 15,
+                        status_caso = c(1, 2),
+                        week = c(1:25),
+                        alpha = 0.2,
+                        static = TRUE,
+                        map_type = "satellite")
+```
+:::
+
+::: grid-item
+20-25
+:::
+
+::: grid-item
+```{r tepic_20_25}
+#| echo: false
+#| output: true
+# Step 1. load the dengue dataset geocoded ####
+
+########
+densnv::mp_heatmap(locality = c("Tepic", "Xalisco"),
+                        cve_edo = "18",
+                        geocoded_datasets = z,
+                        zoom = 13,
+                        status_caso = c(1, 2),
+                        week = c(20:25),
+                        alpha = 0.2,
+                        static = TRUE,
+                        map_type = "satellite")
+```
+
+:::
+
+::: grid-item
+```{r bahia_20_25}
+#| echo: false
+#| output: true
+# Step 1. load the dengue dataset geocoded ####
+########
+densnv::mp_heatmap(locality = "Bahia de Banderas",
+                        cve_edo = "18",
+                        geocoded_datasets = z,
+                        zoom = 16,
+                        status_caso = c(1, 2),
+                        week = c(20:25),
+                        alpha = 0.2,
+                        static = TRUE,
+                        map_type = "satellite")
+```
+
+:::
+
+::: grid-item
+
+```{r San_blas_20_25}
+#| echo: false
+#| output: true
+
+########
+densnv::mp_heatmap(locality = "San Blas",
+                        cve_edo = "18",
+                        geocoded_datasets = z,
+                        zoom = 15,
+                        status_caso = c(1, 2),
+                        week = c(20:25),
+                        alpha = 0.2,
+                        static = TRUE,
+                        map_type = "satellite")
+```
+:::
+
+::: grid-item
+23-25
+:::
+
+::: grid-item
+```{r tepic_23_25}
+#| echo: false
+#| output: true
+# Step 1. load the dengue dataset geocoded ####
+
+########
+densnv::mp_heatmap(locality = c("Tepic", "Xalisco"),
+                        cve_edo = "18",
+                        geocoded_datasets = z,
+                        zoom = 13,
+                        status_caso = c(1, 2),
+                        week = c(23:25),
+                        alpha = 0.2,
+                        static = TRUE,
+                        map_type = "satellite")
+```
+
+:::
+
+::: grid-item
+```{r bahia_23_25}
+#| echo: false
+#| output: true
+# Step 1. load the dengue dataset geocoded ####
+########
+densnv::mp_heatmap(locality = "Bahia de Banderas",
+                        cve_edo = "18",
+                        geocoded_datasets = z,
+                        zoom = 16,
+                        status_caso = c(1, 2),
+                        week = c(23:25),
+                        alpha = 0.2,
+                        static = TRUE,
+                        map_type = "satellite")
+```
+
+:::
+
+::: grid-item
+
+```{r San_blas_23_25}
+#| echo: false
+#| output: true
+
+########
+densnv::mp_heatmap(locality = "San Blas",
+                        cve_edo = "18",
+                        geocoded_datasets = z,
+                        zoom = 15,
+                        status_caso = c(1, 2),
+                        week = c(23:25),
+                        alpha = 0.2,
+                        static = TRUE,
+                        map_type = "satellite")
+```
+:::
+
+
+:::
+
+</body>
+</html>
+
+## [Transmisión Activa del Dengue en Nayarit]{ style="color:#003300;"}
+<hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
+
+<html>
+<head>
+```{=html}
+<style>
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  padding: 5px;
+}
+
+.grid-item {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 5px;
+  font-size: 30px;
+  text-align: center;
+}
+</style>
+```
+</head>
+<body>
+<h1>
+</h1>
+<p>
+</p>
+
+::: grid-container
+
+::: grid-item
+Semana
+:::
+
+::: grid-item
+Santiago Ixcuintla
+:::
+
+::: grid-item
+Tecuala
+:::
+
+::: grid-item
+Tuxpan
+:::
+
+::: grid-item
+1-25
+:::
+
+::: grid-item
+```{r santiago_1_25}
+#| echo: false
+#| output: true
+densnv::mp_heatmap(locality = "Santiago Ixcuintla",
+                        cve_edo = "18",
+                        geocoded_datasets = z,
+                        zoom = 15,
+                        status_caso = c(1, 2),
+                        week = c(1:25),
+                        alpha = 0.2,
+                        static = TRUE,
+                        map_type = "satellite")
+```
+
+:::
+
+::: grid-item
+```{r tecuala_1_25}
+#| echo: false
+#| output: true
+# Step 1. load the dengue dataset geocoded ####
+densnv::mp_heatmap(locality = "Tecuala",
+                   cve_edo = "18",
+                   geocoded_datasets = z,
+                   zoom = 15,
+                   status_caso = c(1, 2),
+                   week = c(1:25),
+                   alpha = 0.2,
+                   static = TRUE,
+                   map_type = "satellite")
+
+```
+
+:::
+
+::: grid-item
+
+```{r tuxpan_1_25}
+#| echo: false
+#| output: true
+densnv::mp_heatmap(locality = "Tuxpan",
+                   cve_edo = "18",
+                   geocoded_datasets = z,
+                   zoom = 15,
+                   status_caso = c(1, 2),
+                   week = c(1:25),
+                   alpha = 0.2,
+                   static = TRUE,
+                   map_type = "satellite")
+```
+:::
+
+::: grid-item
+20-25
+:::
+
+::: grid-item
+```{r santiago_20_25}
+#| echo: false
+#| output: true
+densnv::mp_heatmap(locality = "Santiago Ixcuintla",
+                        cve_edo = "18",
+                        geocoded_datasets = z,
+                        zoom = 15,
+                        status_caso = c(1, 2),
+                        week = c(20:25),
+                        alpha = 0.2,
+                        static = TRUE,
+                        map_type = "satellite")
+```
+
+:::
+
+::: grid-item
+```{r tecuala_20_25}
+#| echo: false
+#| output: true
+# Step 1. load the dengue dataset geocoded ####
+########
+densnv::mp_heatmap(locality = "Tecuala",
+                   cve_edo = "18",
+                   geocoded_datasets = z,
+                   zoom = 15,
+                   status_caso = c(1, 2),
+                   week = c(20:25),
+                   alpha = 0.2,
+                   static = TRUE,
+                   map_type = "satellite")
+```
+
+:::
+
+::: grid-item
+
+```{r tuxpan_20_25}
+#| echo: false
+#| output: true
+densnv::mp_heatmap(locality = "Tuxpan",
+                   cve_edo = "18",
+                   geocoded_datasets = z,
+                   zoom = 15,
+                   status_caso = c(1, 2),
+                   week = c(20:25),
+                   alpha = 0.2,
+                   static = TRUE,
+                   map_type = "satellite")
+```
+:::
+
+::: grid-item
+23-25
+:::
+
+::: grid-item
+```{r santiago_23_25}
+#| echo: false
+#| output: true
+densnv::mp_heatmap(locality = "Santiago Ixcuintla",
+                        cve_edo = "18",
+                        geocoded_datasets = z,
+                        zoom = 15,
+                        status_caso = c(1, 2),
+                        week = c(23:25),
+                        alpha = 0.2,
+                        static = TRUE,
+                        map_type = "satellite")
+
+```
+
+:::
+
+::: grid-item
+```{r tecuala_23_25}
+#| echo: false
+#| output: true
+# Step 1. load the dengue dataset geocoded ####
+densnv::mp_heatmap(locality = "Tecuala",
+                   cve_edo = "18",
+                   geocoded_datasets = z,
+                   zoom = 15,
+                   status_caso = c(1, 2),
+                   week = c(23:25),
+                   alpha = 0.2,
+                   static = TRUE,
+                   map_type = "satellite")
+```
+
+:::
+
+::: grid-item
+
+```{r tuxpan_23_25}
+#| echo: false
+#| output: true
+densnv::mp_heatmap(locality = "Tuxpan",
+                   cve_edo = "18",
+                   geocoded_datasets = z,
+                   zoom = 15,
+                   status_caso = c(1, 2),
+                   week = c(23:25),
+                   alpha = 0.2,
+                   static = TRUE,
+                   map_type = "satellite")
+```
+:::
+
+
+:::
+
+</body>
+</html>
+
+
+
+## [Transmisión Activa del Dengue en Morelos]{ style="color:#003300;"}
+<hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
+
+<html>
+<head>
+```{=html}
+<style>
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  padding: 5px;
+}
+
+.grid-item {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 5px;
+  font-size: 30px;
+  text-align: center;
+}
+</style>
+```
+</head>
+<body>
+<h1>
+</h1>
+<p>
+</p>
+
+::: grid-container
+
+::: grid-item
+Semana
+:::
+
+::: grid-item
+Cuernavaca
+:::
+
+::: grid-item
+Juitepec
+:::
+
+::: grid-item
+Temixco
+:::
+
+::: grid-item
+1-25
+:::
+
+::: grid-item
+```{r cuernavaca_1_25}
+#| echo: false
+#| output: true
+densnv::mp_heatmap(locality = "Cuernavaca",
+                   cve_edo = "17",
+                   geocoded_datasets = z,
+                   zoom = 13,
+                   status_caso = c(1, 2),
+                   week = c(1:25),
+                   alpha = 0.2,
+                   static = TRUE,
+                   map_type = "satellite")
+```
+
+:::
+
+::: grid-item
+```{r juitepec_1_25}
+#| echo: false
+#| output: true
+# Step 1. load the dengue dataset geocoded ####
+densnv::mp_heatmap(locality = "Jiutepec",
+                   cve_edo = "17",
+                   geocoded_datasets = z,
+                   zoom = 13,
+                   status_caso = c(1, 2),
+                   week = c(1:25),
+                   alpha = 0.2,
+                   static = TRUE,
+                   map_type = "satellite")
+
+```
+
+:::
+
+::: grid-item
+
+```{r temixco_1_25}
+#| echo: false
+#| output: true
+densnv::mp_heatmap(locality = "Temixco",
+                    cve_edo = "17",
+                    geocoded_datasets = z,
+                    zoom = 13,
+                    status_caso = c(1, 2),
+                    week = c(1:25),
+                    alpha = 0.2,
+                    static = TRUE,
+                    map_type = "satellite")
+```
+:::
+
+::: grid-item
+20-25
+:::
+
+::: grid-item
+```{r cuernavaca_20_25}
+#| echo: false
+#| output: true
+densnv::mp_heatmap(locality = "Cuernavaca",
+                   cve_edo = "17",
+                   geocoded_datasets = z,
+                   zoom = 13,
+                   status_caso = c(1, 2),
+                   week = c(20:25),
+                   alpha = 0.2,
+                   static = TRUE,
+                   map_type = "satellite")
+```
+
+:::
+
+::: grid-item
+```{r jiutepec_20_25}
+#| echo: false
+#| output: true
+# Step 1. load the dengue dataset geocoded ####
+########
+densnv::mp_heatmap(locality = "Jiutepec",
+                   cve_edo = "17",
+                   geocoded_datasets = z,
+                   zoom = 13,
+                   status_caso = c(1, 2),
+                   week = c(20:25),
+                   alpha = 0.2,
+                   static = TRUE,
+                   map_type = "satellite")
+```
+
+:::
+
+::: grid-item
+
+```{r temixco_20_25}
+#| echo: false
+#| output: true
+densnv::mp_heatmap(locality = "Temixco",
+                    cve_edo = "17",
+                    geocoded_datasets = z,
+                    zoom = 13,
+                    status_caso = c(1, 2),
+                    week = c(20:25),
+                    alpha = 0.2,
+                    static = TRUE,
+                    map_type = "satellite")
+```
+:::
+
+::: grid-item
+23-25
+:::
+
+::: grid-item
+```{r cuernavaca_23_25}
+#| echo: false
+#| output: true
+densnv::mp_heatmap(locality = "Cuernavaca",
+                   cve_edo = "17",
+                   geocoded_datasets = z,
+                   zoom = 13,
+                   status_caso = c(1, 2),
+                   week = c(23:25),
+                   alpha = 0.2,
+                   static = TRUE,
+                   map_type = "satellite")
+
+```
+
+:::
+
+::: grid-item
+```{r juitepec_23_25}
+#| echo: false
+#| output: true
+# Step 1. load the dengue dataset geocoded ####
+densnv::mp_heatmap(locality = "Jiutepec",
+                   cve_edo = "17",
+                   geocoded_datasets = z,
+                   zoom = 13,
+                   status_caso = c(1, 2),
+                   week = c(23:25),
+                   alpha = 0.2,
+                   static = TRUE,
+                   map_type = "satellite")
+```
+
+:::
+
+::: grid-item
+
+```{r temixco_23_25}
+#| echo: false
+#| output: true
+densnv::mp_heatmap(locality = "Temixco",
+                    cve_edo = "17",
+                    geocoded_datasets = z,
+                    zoom = 13,
+                    status_caso = c(1, 2),
+                    week = c(23:25),
+                    alpha = 0.2,
+                    static = TRUE,
+                    map_type = "satellite")
+```
+:::
+
+
+:::
+
+</body>
+</html>
+
+
+## [Transmisión Activa del Dengue en Morelos]{ style="color:#003300;"}
+<hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
+
+<html>
+<head>
+```{=html}
+<style>
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  padding: 5px;
+}
+
+.grid-item {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 5px;
+  font-size: 30px;
+  text-align: center;
+}
+</style>
+```
+</head>
+<body>
+<h1>
+</h1>
+<p>
+</p>
+
+::: grid-container
+
+::: grid-item
+Semana
+:::
+
+::: grid-item
+Cuautla
+:::
+
+::: grid-item
+Jujutla
+:::
+
+::: grid-item
+Emiliano Zapata
+:::
+
+::: grid-item
+1-25
+:::
+
+::: grid-item
+```{r cuautla_1_25}
+#| echo: false
+#| output: true
+densnv::mp_heatmap(locality = "Cuautla",
+                   cve_edo = "17",
+                   geocoded_datasets = z,
+                   zoom = 13,
+                   status_caso = c(1, 2),
+                   week = c(1:25),
+                   alpha = 0.2,
+                   static = TRUE,
+                   map_type = "satellite")
+```
+
+:::
+
+::: grid-item
+```{r jojutla_1_25}
+#| echo: false
+#| output: true
+# Step 1. load the dengue dataset geocoded ####
+densnv::mp_heatmap(locality = "Jojutla",
+                   cve_edo = "17",
+                   geocoded_datasets = z,
+                   zoom = 16,
+                   status_caso = c(1, 2),
+                   week = c(1:25),
+                   alpha = 0.2,
+                   static = TRUE,
+                   map_type = "satellite")
+
+```
+
+:::
+
+::: grid-item
+
+```{r emiliano_zapata_1_25}
+#| echo: false
+#| output: true
+densnv::mp_heatmap(locality = "Emiliano Zapata",
+                   cve_edo = "17",
+                   geocoded_datasets = z,
+                   zoom = 13,
+                   status_caso = c(1, 2),
+                   week = c(1:25),
+                   alpha = 0.2,
+                   static = TRUE,
+                   map_type = "satellite")
+```
+:::
+
+::: grid-item
+20-25
+:::
+
+::: grid-item
+```{r cuautla_20_25}
+#| echo: false
+#| output: true
+densnv::mp_heatmap(locality = "Cuautla",
+                   cve_edo = "17",
+                   geocoded_datasets = z,
+                   zoom = 13,
+                   status_caso = c(1, 2),
+                   week = c(20:25),
+                   alpha = 0.2,
+                   static = TRUE,
+                   map_type = "satellite")
+```
+
+:::
+
+::: grid-item
+```{r jojutla_20_25}
+#| echo: false
+#| output: true
+# Step 1. load the dengue dataset geocoded ####
+densnv::mp_heatmap(locality = "Jojutla",
+                   cve_edo = "17",
+                   geocoded_datasets = z,
+                   zoom = 16,
+                   status_caso = c(1, 2),
+                   week = c(20:25),
+                   alpha = 0.2,
+                   static = TRUE,
+                   map_type = "satellite")
+
+```
+
+:::
+
+::: grid-item
+
+```{r emiliano_zapata_20_25}
+#| echo: false
+#| output: true
+densnv::mp_heatmap(locality = "Emiliano Zapata",
+                   cve_edo = "17",
+                   geocoded_datasets = z,
+                   zoom = 13,
+                   status_caso = c(1, 2),
+                   week = c(20:25),
+                   alpha = 0.2,
+                   static = TRUE,
+                   map_type = "satellite")
+```
+:::
+
+::: grid-item
+23-25
+:::
+
+::: grid-item
+```{r cuautla_23_25}
+#| echo: false
+#| output: true
+densnv::mp_heatmap(locality = "Cuautla",
+                   cve_edo = "17",
+                   geocoded_datasets = z,
+                   zoom = 13,
+                   status_caso = c(1, 2),
+                   week = c(23:25),
+                   alpha = 0.2,
+                   static = TRUE,
+                   map_type = "satellite")
+
+```
+
+:::
+
+::: grid-item
+```{r jojutla_23_25}
+#| echo: false
+#| output: true
+# Step 1. load the dengue dataset geocoded ####
+densnv::mp_heatmap(locality = "Jojutla",
+                   cve_edo = "17",
+                   geocoded_datasets = z,
+                   zoom = 16,
+                   status_caso = c(1, 2),
+                   week = c(23:25),
+                   alpha = 0.2,
+                   static = TRUE,
+                   map_type = "satellite")
+```
+
+:::
+
+::: grid-item
+
+```{r emiliano_zapata_23_25}
+#| echo: false
+#| output: true
+densnv::mp_heatmap(locality = "Emiliano Zapata",
+                   cve_edo = "17",
+                   geocoded_datasets = z,
+                   zoom = 13,
+                   status_caso = c(1, 2),
+                   week = c(23:25),
+                   alpha = 0.2,
+                   static = TRUE,
+                   map_type = "satellite")
+```
+:::
+
+
+:::
+
+</body>
+</html>
+
+
+## [Transmisión Activa del Dengue en Chiapas]{ style="color:#003300;"}
+<hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
+
+<html>
+<head>
+```{=html}
+<style>
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  padding: 5px;
+}
+
+.grid-item {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 5px;
+  font-size: 30px;
+  text-align: center;
+}
+</style>
+```
+</head>
+<body>
+<h1>
+</h1>
+<p>
+</p>
+
+::: grid-container
+
+::: grid-item
+Semana
+:::
+
+::: grid-item
+Tuxtla Gutierrez
+:::
+
+::: grid-item
+Tapachula
+:::
+
+::: grid-item
+San Cristobal de las Casas
+:::
+
+::: grid-item
+1-25
+:::
+
+::: grid-item
+```{r tuxtla_1_25}
+#| echo: false
+#| output: true
+densnv::mp_heatmap(locality = "Tuxtla Gutierrez",
+                   cve_edo = "07",
+                   geocoded_datasets = z,
+                   zoom = 13,
+                   status_caso = c(1, 2),
+                   week = c(1:25),
+                   alpha = 0.2,
+                   static = TRUE,
+                   map_type = "satellite")
+```
+
+:::
+
+::: grid-item
+```{r tapachula_1_25}
+#| echo: false
+#| output: true
+# Step 1. load the dengue dataset geocoded ####
+densnv::mp_heatmap(locality = "Tapachula de Cordoba y Ordoñez",
+                   cve_edo = "07",
+                   geocoded_datasets = z,
+                   zoom = 13,
+                   status_caso = c(1, 2),
+                   week = c(1:25),
+                   alpha = 0.2,
+                   static = TRUE,
+                   map_type = "satellite")
+
+```
+
+:::
+
+::: grid-item
+
+```{r san_cristobal_1_25}
+#| echo: false
+#| output: true
+densnv::mp_heatmap(locality = "San Cristobal de las Casas",
+                   cve_edo = "07",
+                   geocoded_datasets = z,
+                   zoom = 14,
+                   status_caso = c(1, 2),
+                   week = c(1:25),
+                   alpha = 0.2,
+                   static = TRUE,
+                   map_type = "satellite")
+```
+:::
+
+::: grid-item
+20-25
+:::
+
+::: grid-item
+```{r tuxtla_20_25}
+#| echo: false
+#| output: true
+densnv::mp_heatmap(locality = "Tuxtla Gutierrez",
+                   cve_edo = "07",
+                   geocoded_datasets = z,
+                   zoom = 13,
+                   status_caso = c(1, 2),
+                   week = c(20:25),
+                   alpha = 0.2,
+                   static = TRUE,
+                   map_type = "satellite")
+```
+
+:::
+
+::: grid-item
+```{r tapachula_20_25}
+#| echo: false
+#| output: true
+# Step 1. load the dengue dataset geocoded ####
+densnv::mp_heatmap(locality = "Tapachula de Cordoba y Ordoñez",
+                   cve_edo = "07",
+                   geocoded_datasets = z,
+                   zoom = 13,
+                   status_caso = c(1, 2),
+                   week = c(20:25),
+                   alpha = 0.2,
+                   static = TRUE,
+                   map_type = "satellite")
+
+```
+
+:::
+
+::: grid-item
+
+```{r san_cristobal_20_25}
+#| echo: false
+#| output: true
+densnv::mp_heatmap(locality = "San Cristobal de las Casas",
+                   cve_edo = "07",
+                   geocoded_datasets = z,
+                   zoom = 14,
+                   status_caso = c(1, 2),
+                   week = c(20:25),
+                   alpha = 0.2,
+                   static = TRUE,
+                   map_type = "satellite")
+```
+:::
+
+::: grid-item
+23-25
+:::
+
+::: grid-item
+```{r tuxtla_23_25}
+#| echo: false
+#| output: true
+densnv::mp_heatmap(locality = "Tuxtla Gutierrez",
+                   cve_edo = "07",
+                   geocoded_datasets = z,
+                   zoom = 13,
+                   status_caso = c(1, 2),
+                   week = c(20:25),
+                   alpha = 0.2,
+                   static = TRUE,
+                   map_type = "satellite")
+
+```
+
+:::
+
+::: grid-item
+```{r tapachula_23_25}
+#| echo: false
+#| output: true
+# Step 1. load the dengue dataset geocoded ####
+densnv::mp_heatmap(locality = "Tapachula de Cordoba y Ordoñez",
+                   cve_edo = "07",
+                   geocoded_datasets = z,
+                   zoom = 13,
+                   status_caso = c(1, 2),
+                   week = c(20:25),
+                   alpha = 0.2,
+                   static = TRUE,
+                   map_type = "satellite")
+```
+
+:::
+
+::: grid-item
+
+```{r san_cristobal_23_25}
+#| echo: false
+#| output: true
+densnv::mp_heatmap(locality = "San Cristobal de las Casas",
+                   cve_edo = "07",
+                   geocoded_datasets = z,
+                   zoom = 14,
+                   status_caso = c(1, 2),
+                   week = c(23:25),
+                   alpha = 0.2,
+                   static = TRUE,
+                   map_type = "satellite")
+```
+:::
+
+
+:::
+
+</body>
+</html>
+
+
+## [Transmisión Activa del Dengue en Chiapas]{ style="color:#003300;"}
+<hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
+
+<html>
+<head>
+```{=html}
+<style>
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  padding: 5px;
+}
+
+.grid-item {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 5px;
+  font-size: 30px;
+  text-align: center;
+}
+</style>
+```
+</head>
+<body>
+<h1>
+</h1>
+<p>
+</p>
+
+::: grid-container
+
+::: grid-item
+Semana
+:::
+
+::: grid-item
+Palenque
+:::
+
+::: grid-item
+Comitan de Domínguez
+:::
+
+::: grid-item
+Huixtla
+:::
+
+::: grid-item
+1-25
+:::
+
+::: grid-item
+```{r palenque_1_25}
+#| echo: false
+#| output: true
+densnv::mp_heatmap(locality = "Palenque",
+                   cve_edo = "07",
+                   geocoded_datasets = z,
+                   zoom = 14,
+                   status_caso = c(1, 2),
+                   week = c(1:25),
+                   alpha = 0.2,
+                   static = TRUE,
+                   map_type = "satellite")
+```
+
+:::
+
+::: grid-item
+```{r comitan_1_25}
+#| echo: false
+#| output: true
+# Step 1. load the dengue dataset geocoded ####
+densnv::mp_heatmap(locality = "Comitan de Dominguez",
+                   cve_edo = "07",
+                   geocoded_datasets = z,
+                   zoom = 13,
+                   status_caso = c(1, 2),
+                   week = c(1:25),
+                   alpha = 0.2,
+                   static = TRUE,
+                   map_type = "satellite")
+
+
+```
+
+:::
+
+::: grid-item
+
+```{r huixtla_1_25}
+#| echo: false
+#| output: true
+densnv::mp_heatmap(locality = "Huixtla",
+                   cve_edo = "07",
+                   geocoded_datasets = z,
+                   zoom = 14,
+                   status_caso = c(1, 2),
+                   week = c(1:25),
+                   alpha = 0.2,
+                   static = TRUE,
+                   map_type = "satellite")
+```
+:::
+
+::: grid-item
+20-25
+:::
+
+::: grid-item
+```{r palenque_20_25}
+#| echo: false
+#| output: true
+densnv::mp_heatmap(locality = "Palenque",
+                   cve_edo = "07",
+                   geocoded_datasets = z,
+                   zoom = 14,
+                   status_caso = c(1, 2),
+                   week = c(20:25),
+                   alpha = 0.2,
+                   static = TRUE,
+                   map_type = "satellite")
+```
+
+:::
+
+::: grid-item
+```{r comitan_20_25}
+#| echo: false
+#| output: true
+# Step 1. load the dengue dataset geocoded ####
+densnv::mp_heatmap(locality = "Comitan de Dominguez",
+                   cve_edo = "07",
+                   geocoded_datasets = z,
+                   zoom = 13,
+                   status_caso = c(1, 2),
+                   week = c(20:25),
+                   alpha = 0.2,
+                   static = TRUE,
+                   map_type = "satellite")
+
+
+```
+
+:::
+
+::: grid-item
+
+```{r huixtla_20_25}
+#| echo: false
+#| output: true
+densnv::mp_heatmap(locality = "Huixtla",
+                   cve_edo = "07",
+                   geocoded_datasets = z,
+                   zoom = 14,
+                   status_caso = c(1, 2),
+                   week = c(20:25),
+                   alpha = 0.2,
+                   static = TRUE,
+                   map_type = "satellite")
+```
+:::
+
+::: grid-item
+23-25
+:::
+
+::: grid-item
+```{r palenque_23_25}
+#| echo: false
+#| output: true
+densnv::mp_heatmap(locality = "Palenque",
+                   cve_edo = "07",
+                   geocoded_datasets = z,
+                   zoom = 14,
+                   status_caso = c(1, 2),
+                   week = c(23:25),
+                   alpha = 0.2,
+                   static = TRUE,
+                   map_type = "satellite")
+
+```
+
+:::
+
+::: grid-item
+```{r comitan_23_25}
+#| echo: false
+#| output: true
+# Step 1. load the dengue dataset geocoded ####
+densnv::mp_heatmap(locality = "Comitan de Dominguez",
+                   cve_edo = "07",
+                   geocoded_datasets = z,
+                   zoom = 13,
+                   status_caso = c(1, 2),
+                   week = c(23:25),
+                   alpha = 0.2,
+                   static = TRUE,
+                   map_type = "satellite")
+
+```
+
+:::
+
+::: grid-item
+
+```{r huixtla_23_25}
+#| echo: false
+#| output: true
+densnv::mp_heatmap(locality = "Huixtla",
+                   cve_edo = "07",
+                   geocoded_datasets = z,
+                   zoom = 14,
+                   status_caso = c(1, 2),
+                   week = c(23:25),
+                   alpha = 0.2,
+                   static = TRUE,
+                   map_type = "satellite")
+```
+:::
+
+
+:::
+
+</body>
+</html>
+

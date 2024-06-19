@@ -40,7 +40,7 @@ execute:
 
 <br>
 
-![](heatmap_tepic.png){.absolute top="250" left="700" width="1000"}
+![](heatmap_tepic.png){.absolute top="250" left="700" width="800"}
 
 
 

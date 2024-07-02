@@ -1426,7 +1426,8 @@ densnv::mp_heatmap(locality = "Huixtla",
 <style>
 .grid-container_20 {
   display: grid;
-  grid-template-columns: 200px 400px 400px 400px 400px;
+  grid-template-columns: 200px auto auto auto auto;
+  grid-auto-rows: auto;
   padding: 5px;
 }
 
